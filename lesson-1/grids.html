@@ -1,70 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Using Floats</title>
+	<title>Using CSS Grid</title>
 	<style>
 		body{
 			color: #fff;
 			font-family: 'Nunito Semibold';
 			text-align: center;
-			line-height: 3em;
 		}
 		#content{
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			grid-auto-rows: minmax(150px, auto);
 			max-width: 960px;
 			margin: 0 auto;
 		}
+		#content > *{
+			padding: 10px;
+		}
 		header{
+			grid-column: span 3;
 			background: #3bbced;
-			height: 50px;
 		}
 		main{
-			float: right;
-			width: 60%;
+			grid-column: 2 / 4;
+			grid-row: 2 / 4;
 			background: #e82b69;
-			height: 400px;
 		}
 		aside{
+			grid-column: 1 / 2;
 			background: #fac24a;
-			height: 200px;
 		}
 		nav{
+			grid-column: 1 / 2;
 			background: #8ae348;
-			height: 200px;
 		}
 		footer{
+			grid-column: span 3;
 			background: #a56dda;
-			height: 100px;
-		}
-		#sidebar{
-			float: left;
-			width: 40%;
-		}
-		#middle:after{
-			content: '';
-			display: block;
-			clear: both;
 		}
 	</style>
 </head>
 <body>
 
 	<div id="content">
-		
+
 		<header>Header</header>
 
-		<div id="middle"><!-- extra markup -->
+		<main>Main</main>
 
-			<main>Main</main>
+		<aside>Aside</aside>
 
-			<div id="sidebar"><!-- extra markup -->
-
-				<aside>Aside</aside>
-
-				<nav>Nav</nav>
-
-			</div>
-
-		</div>
+		<nav>Nav</nav>
 
 		<footer>Footer</footer>
 
